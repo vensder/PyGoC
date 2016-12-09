@@ -6,7 +6,7 @@ char *word;
 
 int main () {
 
-	word = words[4];
+	word = words[5];
 	printf("Выбранное слово: %s\n", word);
 	printf("Длина слова: %lu\n", strlen(word));
 
