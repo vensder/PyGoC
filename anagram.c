@@ -7,12 +7,22 @@ char *word;
 int main () {
 
 	word = words[5];
+
+	char buf[30];
+	int i = 0;
+	while (i < strlen(word)) {
+	memset(buf,0,sizeof(buf));
+	strncpy(buf, &word[i], 2);
+	printf("Извлекаем буквы по-одной, присваивая временной переменной buf: %s\n", buf);
+	i++; i++;
+}
+
 	printf("Выбранное слово: %s\n", word);
 	printf("Длина слова: %lu\n", strlen(word));
 
 	printf("Берем буквы через пары указателей:\n");
 	char *p1; char *p2;
-	    int i = 0;
+	    i = 0;
 	    while(i < strlen(word)) {
 	        p1 = &word[i];
 	        p2 = &word[i+1];
