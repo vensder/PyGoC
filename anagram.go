@@ -51,4 +51,4 @@ func main() {
 	println("Спасибо за игру.")
 	println("Нажмите Enter, чтобы выйти.")
 	fmt.Scanln()
-
+}
