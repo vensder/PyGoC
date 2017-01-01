@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# find #n Fibonacci number
+# Выводит n-й член ряда Фибоначчи
+# и всю последовательность до n
 
 fib_arr = []
 
