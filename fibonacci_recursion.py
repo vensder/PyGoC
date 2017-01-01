@@ -4,17 +4,19 @@
 fib_arr = []
 
 def fibonacci(n):
-    if n in (0, 1):
+    if n == 0:
+        return(0)
+    elif n == 1:
         return(1)
     else:
         return(fibonacci(n-2) + fibonacci(n-1))
 
 n = int(input("Введите порядковый номер числа из последовательности Фибоначчи:"))
 
-for i in range(n):
+for i in range(n+1):
     fib_arr.append(fibonacci(i))
 
-print("%d-ый член последовательности Фибоначчи - это: %d" % (n, fib_arr[n-1]))
+print("%d-ый член последовательности Фибоначчи - это: %d" % (n, fib_arr[n]))
 print("Вся последовальеность до %d-го члена:" % (n))
 print(fib_arr)
 
