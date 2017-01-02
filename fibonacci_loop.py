@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # find #n Fibonacci number
 from time import time, clock
+from sys import argv
 
 
 def fibonacci(n):
@@ -14,9 +15,12 @@ def fibonacci(n):
     return(fib_arr)
 
 
-n = int(input('''
-    Введите порядковый номер числа
-    из последовательности Фибоначчи:'''))
+if len(argv) < 2:
+    n = int(input('''
+        Введите порядковый номер числа
+        из последовательности Фибоначчи:'''))
+else:
+    n = int(argv[1])
 
 start_time = time()
 start_clock = clock()
