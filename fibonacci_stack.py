@@ -5,14 +5,14 @@ from sys import argv
 
 
 def fibonacci(n):
-    fib_arr = []
-    if n == 0:
-        fib_arr = [0]
+    if n < 2:
+        return n
     else:
-        fib_arr = [0, 1]
-        for i in range(n - 1):
-            fib_arr.append((fib_arr[i] + fib_arr[i + 1]))
-    return(fib_arr)
+        fib_stack = [0, 1, ]
+        for i in range(n):
+            fib_stack[0], fib_stack[1] = \
+                fib_stack[1], fib_stack[0] + fib_stack[1]
+    return(fib_stack[0])
 
 
 if len(argv) < 2:
@@ -31,18 +31,14 @@ else:
 
 start_time = time()
 start_clock = clock()
-fibonacci_array = fibonacci(n)
+fibonacci_number = fibonacci(n)
 stop_time = time()
 stop_clock = clock()
 
 print('''
     %d-ый член последовательности Фибоначчи -
     это: %d
-    ''' % (n, fibonacci_array[n]))
-
-if n <= 100:  # не печатаем всю последовательность, если она длиннее 100
-    print("Вся последовальеность до %d-го члена:" % (n))
-    print(fibonacci_array)
+    ''' % (n, fibonacci_number))
 
 print("Время вычисления по time: %s секунд" % (stop_time - start_time))
 print("Время вычисления по clock: %s секунд" % (stop_clock - start_clock))
