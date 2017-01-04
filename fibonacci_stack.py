@@ -9,10 +9,10 @@ def fibonacci(n):
         return n
     else:
         fib_stack = [0, 1, ]
-        for i in range(n):
+        for i in range(n - 1):
             fib_stack[0], fib_stack[1] = \
                 fib_stack[1], fib_stack[0] + fib_stack[1]
-    return(fib_stack[0])
+    return(fib_stack[1])
 
 
 if len(argv) < 2:
